@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Frase do Dia</title>
+</head>
+<body>
+    <header>
+        <h1>Frase do Dia</h1>
+    </header>
+    <main>
+        <div class="container">
+            <div class="form">
+                <form action="/" method="post">
+                    <label>Informe seu nome:</label>
+                    <input type="text" name="nome" required />
+                    <button type="submit">Ver Frase</button>
+                </form>
+            </div>
+
+            <div class="resultado">
+                {% if error %}
+                    <p style=>{{ error }}</p>
+                {% endif %}
+
+                {% if conselho %}
+                    <p><strong>Frase para {{ nome }}:</strong> "{{ conselho }}"</p>
+                {% endif %}
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Todos os direitos reservados &copy; 2025</p>
+    </footer>
+</body>
+</html>
